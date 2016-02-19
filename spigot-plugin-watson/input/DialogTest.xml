@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dialog xsi:noNamespaceSchemaLocation="WatsonDialogDocument_1.1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <flow>
+        <folder label="Main">
+            <output id="output_200000">
+                <prompt selectionType="RANDOM">
+                    <item>Hello, welcome to Watson Medical Minecraft QA Service. What disease you'd like to learn about?</item>
+                </prompt>
+                <goto ref="getUserInput_2449614"/>
+            </output>
+            <getUserInput id="getUserInput_2449614">
+                <search ref="folder_2449611"/>
+                <default>
+                    <output>
+                        <prompt selectionType="RANDOM">
+                            <item>I am sorry, I can only provide information on diabetes, measles and the flu.</item>
+<item>Apologies but I did not understand your input, I am only offering a demo and for that I only have information on diabetes, measles or the flu.</item>
+<item>Can you please repeat your selection from diabetes, measles or the flu.</item>
+                        </prompt>
+                    </output>
+                </default>
+            </getUserInput>
+        </folder>
+        <folder label="Library">
+            <folder label="Live Content" id="folder_2449611">
+                <input>
+                    <grammar>
+                        <item>Which disease do you have information on?</item>
+                        <item>$ * information * disease </item>
+                        <item>$ disease * information</item>
+                        <item>$ disease information </item>
+                        <item>$ list * diseases</item>
+                        <item>What * disease * information</item>
+                        <item>$ list disease * available</item>
+                        <item>$ what is * Zika * virus</item>
+                        <item>$ disease</item>
+                        <item>$ diseases</item>
+                    </grammar>
+                    <output>
+                        <prompt selectionType="RANDOM">
+                            <item>I have information about Diabetes, Measles and the Flu. Which would you like to learn about?</item>
+                        </prompt>
+                        <goto ref="getUserInput_2449614"/>
+                    </output>
+                </input>
+                <input>
+                    <grammar>
+                        <item>What can you describe?</item>
+                    </grammar>
+                    <output>
+                        <prompt selectionType="RANDOM">
+                            <item>Are you looking for information on diseases ?</item>
+                        </prompt>
+                        <input>
+                            <grammar>
+                                <item>diabetes</item>
+                                <item>flu</item>
+                                <item>fever</item>
+                                <item>measles</item>
+                                <item>cancer</item>
+                                <item>zika virus</item>
+                            </grammar>
+                            <output>
+                                <prompt selectionType="RANDOM">
+                                    <item>I have information about &lt;br/&gt;
+diabetes,
+measles,
+fever,
+flue,
+cancer,
+Heart Attack,
+Zika virus
+</item>
+                                </prompt>
+                            </output>
+                        </input>
+                        <input>
+                            <grammar>
+                                <item>diseases</item>
+                            </grammar>
+                            <output>
+                                <prompt selectionType="RANDOM">
+                                    <item>I have information about diabetes,
+fever,
+zika virus,
+diabetes,
+flu,
+measles,
+cancer,
+heart attac.
+</item>
+                                </prompt>
+                            </output>
+                        </input>
+                        <input>
+                            <grammar>
+                                <item>diabetes</item>
+                                <item>flu</item>
+                                <item>virus</item>
+                                <item>fever</item>
+                                <item>measles</item>
+                                <item>zika virus</item>
+                            </grammar>
+                            <output>
+                                <prompt selectionType="RANDOM">
+                                    <item>Chose from diabetes, flu, fever, virus, zika virus, measles, cancer, heart attach</item>
+                                </prompt>
+                            </output>
+                        </input>
+                    </output>
+                </input>
+                <input>
+                    <grammar>
+                        <item>Diabetes</item>
+                        <item>diabetes</item>
+                        <item>diabete</item>
+                        <item>$diabetes</item>
+                        <item>* diabetes</item>
+                        <item>diabetes *</item>
+                    </grammar>
+                    <output>
+                        <prompt selectionType="RANDOM">
+                            <item>Diabetes mellitus (DM), commonly referred to as diabetes, is a group of metabolic diseases in which there are high blood sugar levels over a prolonged period.[2] Symptoms of high blood sugar include frequent urination, increased thirst, and increased hunger. Can I help you with any other questions on Diabetes, Measles or the Flu?</item>
+                        </prompt>
+                        <goto ref="getUserInput_2449614"/>
+                    </output>
+                </input>
+                <input>
+                    <grammar>
+                        <item>Measles</item>
+                        <item>measles</item>
+                        <item>$ measles</item>
+                        <item>* measles *</item>
+                        <item>$ measle</item>
+                    </grammar>
+                    <output>
+                        <prompt selectionType="RANDOM">
+                            <item>Measles, also known as morbilli, rubeola, or red measles, is a highly contagious infection caused by the measles virus.[1][2] Initial signs and symptoms typically include fever, often greater than 40 °C (104.0 °F), cough, runny nose, and red eyes. Measles is an airborne disease which spreads easily through the coughs and sneezes of those infected. It may also be spread through contact with saliva or nasal secretions. Can I help you with any other questions on Diabetes, Measles or the Flu?</item>
+                        </prompt>
+                        <goto ref="getUserInput_2449614"/>
+                    </output>
+                </input>
+                <input>
+                    <grammar>
+                        <item>Flu</item>
+                        <item>the flu</item>
+                        <item>$ flu</item>
+                        <item>* flu *</item>
+                        <item>cold</item>
+                        <item>common cold</item>
+                        <item>$ cold</item>
+                        <item>* cold *</item>
+                        <item>$ common cold</item>
+                        <item>influenza</item>
+                        <item>$ influenza</item>
+                        <item>* influenza *</item>
+                    </grammar>
+                    <output>
+                        <prompt selectionType="RANDOM">
+                            <item>Influenza, commonly known as "the flu", is an infectious disease caused by an influenza virus.[1] Symptoms can be mild to severe.[2] The most common symptoms include: a high fever, runny nose, sore throat, muscle pains, headache, coughing, and feeling tired. Usually, the virus is spread through the air from coughs or sneezes. Can I help you with any other questions on Diabetes, Measles or the Flu?</item>
+                        </prompt>
+                        <goto ref="getUserInput_2449614"/>
+                    </output>
+                </input>
+                <input>
+                    <grammar>
+                        <item>None</item>
+                        <item>Nothing</item>
+                        <item>Thank you</item>
+                        <item>Nada</item>
+                        <item>$ Nothing</item>
+                        <item>* nothing *</item>
+                        <item>$ nothing</item>
+                        <item>$ nada</item>
+                        <item>That is all.</item>
+                        <item>$ no * questions.</item>
+                        <item>$ No</item>
+                        <item>$ Thank you</item>
+                        <item>$ thank you</item>
+                        <item>$ No thanks</item>
+                        <item>$ thanks</item>
+                        <item>No more info needed</item>
+                    </grammar>
+                    <output>
+                        <prompt selectionType="RANDOM">
+                            <item>Great !! Pleasure chatting with you.</item>
+                        </prompt>
+                    </output>
+                </input>
+                <input>
+                    <grammar>
+                        <item>Hi</item>
+                        <item>$ hi</item>
+                        <item>$ HI</item>
+                        <item>$ Hi</item>
+                        <item>$ Hello</item>
+                        <item>hey my friend</item>
+                        <item>hey my buddy</item>
+                        <item>$ bonjour</item>
+                        <item>$ bonjour *</item>
+                        <item>$ good morning</item>
+                        <item>$ good morning *</item>
+                        <item>$ good afternoon</item>
+                        <item>good afternoon *</item>
+                        <item>$ hey there</item>
+                        <item>hey there *</item>
+                        <item>$ helo</item>
+                        <item>$ hey baby</item>
+                        <item>$ hi there</item>
+                        <item>$ hey there all</item>
+                        <item>hi everybody</item>
+                        <item>$ morning</item>
+                        <item>morning *</item>
+                        <item>$ regards</item>
+                        <item>$ salut</item>
+                        <item>$ salutations</item>
+                        <item>$ wake up</item>
+                        <item>$ greetings</item>
+                        <item>$ konnichi wa</item>
+                        <item>$ konnichiwa</item>
+                        <item>$ moshi moshi</item>
+                        <item>$ mooshi mooshi</item>
+                        <item>$ shalom</item>
+                        <item>$ Hellas </item>
+                        <item>$ greeting *</item>
+                        <item>$ Hello how is *</item>
+                        <item>* hello how is *</item>
+                        <item>Hello * how is *</item>
+                        <item>* hello * how is *</item>
+                        <item>$ Hello</item>
+                        <item>$ good evening</item>
+                        <item>$ evening</item>
+                        <item>$ hello there</item>
+                        <item>$ hey</item>
+                        <item>$ Hello it is me</item>
+                        <item>$ Hey you</item>
+                        <item>$ thought I would say hello</item>
+                        <item>$ hello my friend</item>
+                        <item>$ hey Watson</item>
+                        <item>$ hello Watson</item>
+                        <item>$ hey there Watson</item>
+                        <item>$ hey Watson</item>
+                        <item>$ hello Watson</item>
+                        <item>$ hey there Watson</item>
+                        <item>$ hello my Watson</item>
+                        <item>$ hello my Watson</item>
+                    </grammar>
+                    <goto ref="output_200000"/>
+                </input>
+            </folder>
+            <folder label="Storage"/>
+        </folder>
+        <folder label="Global"/>
+        <folder label="Concepts">
+            <concept>
+                <grammar>
+                    <item>diabetes</item>
+                    <item>diabetic</item>
+                    <item>diabete</item>
+                </grammar>
+            </concept>
+            <concept>
+                <grammar>
+                    <item>flu</item>
+                    <item>the flu</item>
+                    <item>influenza</item>
+                    <item>cold</item>
+                    <item>common cold</item>
+                </grammar>
+            </concept>
+            <concept>
+                <grammar>
+                    <item>measles</item>
+                    <item>Measles</item>
+                    <item>the Measles</item>
+                    <item>measle</item>
+                </grammar>
+            </concept>
+        </folder>
+    </flow>
+    <constants>
+        <var_folder name="Home">
+            <var_folder name="General" type="CONST"/>
+        </var_folder>
+    </constants>
+    <variables>
+        <var_folder name="Home"/>
+    </variables>
+    <settings>
+        <setting name="AUTOLEARN" type="USER">false</setting>
+        <setting name="LANGUAGE" type="USER">en-US</setting>
+        <setting name="RESPONSETIME" type="USER">0</setting>
+        <setting name="MAXAUTOLEARNITEMS" type="USER">0</setting>
+        <setting name="NUMAUTOSETRELATED" type="USER">0</setting>
+        <setting name="TIMEZONEID" type="USER">Australia/Sydney</setting>
+        <setting name="AUTOSETRELATEDNODEID" type="USER">0</setting>
+        <setting name="INPUTMASKTYPE" type="USER">0</setting>
+        <setting name="CONCEPTMATCHING" type="USER">0</setting>
+        <setting name="PARENT_ACCOUNT">en-us-legacy</setting>
+        <setting name="PLATFORM_VERSION">10.1</setting>
+        <setting name="USE_TRANSLATIONS">2</setting>
+        <setting name="USE_SPELLING_CORRECTIONS">2</setting>
+        <setting name="USE_STOP_WORDS">2</setting>
+        <setting name="USE_CONCEPTS">3</setting>
+        <setting name="ENTITIES_SCOPE">1</setting>
+    </settings>
+    <specialSettings>
+        <specialSetting label="DNR Join Statement">
+            <variations/>
+        </specialSetting>
+        <specialSetting label="AutoLearn Statement">
+            <variations/>
+        </specialSetting>
+    </specialSettings>
+</dialog>

@@ -1,0 +1,10 @@
+name: WatsonDialogPlugin
+main: com.ibm.minecraft.spigotplugin.WatsonDialog
+version: 1.0
+
+commands:
+  hello:
+    description: A new command
+  watson:
+    description: watson initial command
+
