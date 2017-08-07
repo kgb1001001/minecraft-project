@@ -14,9 +14,9 @@ RUN apt-get install -y wget
 RUN mkdir minecraft
 RUN wget "https://hub.spigotmc.org//jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar" -O minecraft/BuildTools.jar
 RUN git config --global core.autocrlf input
-RUN java -jar minecraft/BuildTools.jar --rev 1.11.2
+RUN java -jar minecraft/BuildTools.jar --rev 1.12
 RUN echo "eula=true" > eula.txt
 RUN mkdir plugins
 ADD HelloWorld.jar /plugins/HelloWorld.jar
-CMD java -XX:MaxPermSize=128M -Xms512m -Xmx1024m -jar spigot-1.11.2.jar nogui
+CMD java -XX:MaxPermSize=128M -Xms512m -Xmx1024m -jar spigot-1.12.jar nogui
 EXPOSE 25565
