@@ -1,5 +1,5 @@
-name: WatsonDialogPlugin
-main: com.ibm.minecraft.spigotplugin.WatsonDialog
+name: WatsonConversationPlugin
+main: com.ibm.minecraft.spigotplugin.WatsonConversation
 version: 1.0
 
 commands:
