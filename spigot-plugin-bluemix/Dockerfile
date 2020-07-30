@@ -7,25 +7,23 @@
 #
 FROM ubuntu:16.04
 MAINTAINER Kyle Brown “brownkyl@us.ibm.com”
-RUN apt-get update &&\
+RUN DEBIAN_FRONTEND=noninteractive apt-get update &&\
 	apt-get install -y git &&\
 	apt-get install -y default-jdk &&\
 	apt-get install -y wget &&\
 	mkdir minecraft &&\
 	wget "https://hub.spigotmc.org//jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar" -O minecraft/BuildTools.jar &&\
 	git config --global core.autocrlf input &&\
-	java -jar minecraft/BuildTools.jar --rev 1.12 &&\
+	java -jar minecraft/BuildTools.jar --rev 1.16.1 &&\
 	rm -r Bukkit &&\
 	rm -r CraftBukkit &&\
 	rm -r Spigot &&\
 	rm -r BuildData &&\
-	rm -r apache-maven-3.2.5 &&\
 	rm -r work &&\
-	rm craftbukkit-1.12.jar &&\
 	rm -r minecraft &&\
 	apt-get purge -y --autoremove git wget
 RUN echo "eula=true" > eula.txt &&\
 	mkdir plugins
 ADD Tutorial.jar /plugins/Tutorial.jar
-CMD java -Xms512m -Xmx1024m -jar spigot-1.12.jar nogui
+CMD java -Xms512m -Xmx1024m -jar spigot-1.16.1.jar nogui
 EXPOSE 25565
