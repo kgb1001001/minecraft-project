@@ -5,18 +5,18 @@
 # and fits well with the Docker approach
 # it also adds a first Minecraft plugin into the bare spigot server
 #
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 MAINTAINER Kyle Brown “brownkyl@us.ibm.com”
 RUN apt-get update
 RUN apt-get install -y git
-RUN apt-get install -y default-jdk
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y default-jdk
 RUN apt-get install -y wget
 RUN mkdir minecraft
 RUN wget "https://hub.spigotmc.org//jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar" -O minecraft/BuildTools.jar
 RUN git config --global core.autocrlf input
-RUN java -jar minecraft/BuildTools.jar --rev 1.12
+RUN java -jar minecraft/BuildTools.jar --rev 1.16.1
 RUN echo "eula=true" > eula.txt
 RUN mkdir plugins
 ADD HelloWorld.jar /plugins/HelloWorld.jar
-CMD java -XX:MaxPermSize=128M -Xms512m -Xmx1024m -jar spigot-1.12.jar nogui
+CMD java -XX:MaxPermSize=128M -Xms512m -Xmx1024m -jar spigot-1.16.1.jar nogui
 EXPOSE 25565
