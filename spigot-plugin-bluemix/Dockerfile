@@ -5,11 +5,11 @@
 # and fits well with the Docker approach
 # it also adds a first Minecraft plugin into the bare spigot server
 #
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 MAINTAINER Kyle Brown “brownkyl@us.ibm.com”
-RUN DEBIAN_FRONTEND=noninteractive apt-get update &&\
+RUN apt-get update &&\
 	apt-get install -y git &&\
-	apt-get install -y default-jdk &&\
+	DEBIAN_FRONTEND=noninteractive apt-get install -y default-jdk &&\
 	apt-get install -y wget &&\
 	mkdir minecraft &&\
 	wget "https://hub.spigotmc.org//jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar" -O minecraft/BuildTools.jar &&\
